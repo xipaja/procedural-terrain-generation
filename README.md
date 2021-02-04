@@ -6,7 +6,7 @@ Squares or Hexagons - dropdown to choose if user wants the shapes to be squares 
 
 Constrain Steps - constrain the random walk to within the viewport
 
-Simulate Terrain - the shapes in the viewport will use colors such as brown, green, black, and white to simulate actual ground terrain. The colors change according to how often the random walk algorithm "steps" in one particular location, so the more times it steps in that location, the "higher" the elevation is, and the color will change accordingly.
+Simulate Terrain - the shapes in the viewport will use colors such as brown, green, black, and gray to simulate actual ground terrain. The colors change according to how often the random walk algorithm "steps" in one particular location, so the more times it steps in that location, the "higher" the elevation is, and the color will change accordingly.
 
 Use Stroke - outline shapes in random walk
 
