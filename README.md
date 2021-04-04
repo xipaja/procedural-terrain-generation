@@ -1,4 +1,4 @@
-# procedural-terrain-generation
+# procedural-terrain-generation - in the process of refactoring
 
 2D procedural terrain generation with the ability to adjust settings such as shape, color, and step size.
 
