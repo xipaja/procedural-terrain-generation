@@ -48,7 +48,6 @@ void setup(){
 void draw(){
   if(int(dropdown.getValue()) == 0){
     shapeExperience(square, squareHash);
-    //doSquareStuff();
   }
   else if(int(dropdown.getValue()) == 1){
     shapeExperience(hex, hexHash); 
@@ -81,101 +80,6 @@ public void START(){
   rectMode(CORNERS);
   rect(0, 0, 400, 2000);
 }
-
-void doSquareStuff()
-{
- if(!start)
- {
-   int steps = (int)stepRateSlider.getValue();
-   int maxSteps = (int)maxStepSlider.getValue();
-   
-   for (int i = 0; i < steps; i++)
-   {
-     for (int j = 0; j < maxSteps; j++)
-      {
-          startButton.setColorBackground(color(0,152,0));
-          square.size = (int)stepSizeSlider.getValue();
-          square.spacing = stepScaleSlider.getValue();
-          
-          if(squareHash.containsKey(square.position))
-          {
-              squareHash.put(square.position, squareHash.get(square.position) + 1);
-              println("HASH: " + squareHash.get(square.position));
-              if(terrainColorToggle.getState() == true)
-                {
-                  //if terrain toggle is on, do hashmap coloring
-                  square.getTerrainColor();
-                }
-          }
-          else
-          {
-              squareHash.put(square.position, 1); 
-              if(terrainColorToggle.getState() == true)
-                {
-                  //if terrain toggle is on, do hashmap coloring
-                  square.getTerrainColor();
-                }
-          }
-          
-          //constrain to viewing window
-          if(constrainViewToggle.getState() == true)
-          {
-             if(square.position.x <= 400 + (int)square.size/2)
-             {
-               //if square goes into ui rect
-               square.position.x += square.size * 4;
-             }
-             else if(square.position.x >= (2400 - (int)square.size/2))
-             {
-               //if square goes outside right of window
-               square.position.x -= square.size * 4;
-             }
-             else if(square.position.y <= 0 + square.size/2)
-             {
-               //if square goes outside top of window
-               square.position.y += square.size * 4;
-             }
-             else if(square.position.y >= 2000 - (int)square.size/2)
-             {
-               //if square goes outside bottom of window
-               square.position.y -= square.size * 4;
-             }
-          }
-          if(strokeToggle.getState() == true)
-          {
-           //draw stroke
-           square.hasStroke = true;
-           square.strokeColor = 0; 
-          }
-          else if(strokeToggle.getState() == false)
-          {
-           //no stroke
-           square.hasStroke = false;
-           square.Draw();
-           square.Update();
-          }
-          if(randomSeedToggle.getState() == false)
-          {
-           //limit input to ints
-            seedValueTextField.setInputFilter(ControlP5.INTEGER); 
-            
-            //retrieve data stored in textfield
-           square.startSeed = int(seedValueTextField.getText());
-           println("SEED VAL: " + seedValInput);
-         }
-          else if(randomSeedToggle.getState() == true)
-          {
-            square.Update();
-          }
-          square.Draw();
-          square.Update();
-          println(stepSizeSlider.getValue());
-          println(square.size); 
-       }//end inner for loop - steps
-   }//end outer for loop - max steps
- }//end if(!start) 
-}//end doSquareStuff
-
 
 // for square - size = length of side
 // for hex - size = radius
