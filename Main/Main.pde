@@ -204,14 +204,11 @@ void shapeExperience(Base shape, HashMap<PVector, Integer> hash){
        }
        else{
         hash.put(shape.position, 1);
-        shape.shapeColor = color(160, 106, 196) 
+        shape.shapeColor = color(160, 106, 196);
           if(terrainColorToggle.getState() == true){
               shape.getTerrainColor();
          }
        }
-       
-       
-       
        
        // Constrain to viewport
        

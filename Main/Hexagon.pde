@@ -2,17 +2,9 @@ import controlP5.*;
 import java.util.Map;
 
 class Hexagon extends Base {
-  //color hexColor;
-  //int size;
-  //int stroke;
-  int hexCount;
-  //int startSpeed;
-  //float spacing;
   
-  boolean hasStroke = false;
-  
-  //PVector position;
-  
+  int visitCount;
+    
   Hexagon(){
     // Starting color and position - TODO: random positioning
     shapeColor = color(169, 106, 196);
@@ -93,7 +85,7 @@ class Hexagon extends Base {
       if(shapeColor > color(255)){
         shapeColor = color(255);
       }
-       shapeColor = color(hexCount * 20);
+       shapeColor = color(visitCount * 20);
      }
    }  
  }

@@ -8,11 +8,7 @@ class Square extends Base{
   // count for color hashmap
   int visitCount;
   int startSeed;
-  boolean hasStroke = false;
-  //float spacing;
-  //PVector position;
-  
-  Square(){
+   Square(){
     shapeColor = color(160, 106, 196);
     position = new PVector(1200, 1000);
   }

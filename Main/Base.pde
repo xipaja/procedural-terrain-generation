@@ -8,7 +8,6 @@ public abstract class Base
   int stepScale; //step size aka width/height of square
   boolean hasTerrainColor;
   boolean hasStroke;
-  int boundaries;
   
   int size;
   float spacing;
